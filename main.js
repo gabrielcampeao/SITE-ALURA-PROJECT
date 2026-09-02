@@ -43,10 +43,11 @@ function calculaTempo(tempoObjetivo) {
 
 function atualizaCronometro(){
     for (let i=0; i<contadores.length;i++){
-        document.getElementById("dias"+i).textContent = calculaTempo(tempos[i])[0];
-        document.getElementById("horas"+i).textContent = calculaTempo(tempos[i])[1];
-        document.getElementById("min"+i).textContent = calculaTempo(tempos[i])[2];
-        document.getElementById("seg"+i).textContent = calculaTempo(tempos[i])[3];   
+        const [dias, horas, minutos, segundos] = calculaTempo(tempos[i]);
+        document.getElementById("dias"+i).textContent = dias;
+        document.getElementById("horas"+i).textContent = horas;
+        document.getElementById("min"+i).textContent = minutos;
+        document.getElementById("seg"+i).textContent = segundos;
     }
 }
 
